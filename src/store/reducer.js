@@ -4,11 +4,27 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case action.type:
+    case 'INCREEMENT':
       return {
         ...state,
-        ...action.payload,
+        counter: state.counter + 1,
       };
+    case 'DECREEMENT':
+      return {
+        ...state,
+        counter: state.counter - 1,
+      };
+    case 'ADD':
+      return {
+        ...state,
+        counter: state.counter + action.value,
+      };
+    case 'SUBTRACT':
+      return {
+        ...state,
+        counter: state.counter - action.value,
+      };
+
     default:
       return state;
   }
